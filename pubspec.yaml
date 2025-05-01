@@ -1,0 +1,39 @@
+name: rowpower
+description: Aplicación de visualización de datos para remeros y entrenadores.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_blue_plus: ^1.26.4
+  permission_handler: ^11.3.0
+  fl_chart: ^0.71.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/boat_bow_up.png
+    - assets/images/boat_stern_up.png
+    - assets/images/boat_level_cabeceo.png
+    - assets/images/boat_left_tilt.png
+    - assets/images/boat_right_tilt.png
+    - assets/images/boat_level_escora.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+  remove_alpha_ios: true
