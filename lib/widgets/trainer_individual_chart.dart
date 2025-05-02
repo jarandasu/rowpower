@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-/// Bar chart used on the trainer screen to show
-/// individual rower power output.
-/// - Port side: red
-/// - Starboard side: green
+/// Gráfico de barras utilizado en la pantalla del entrenador para mostrar
+/// la potencia individual de cada remero.
+/// - Babor: rojo
+/// - Estribor: verde
 class TrainerIndividualChart extends StatelessWidget {
   final List<double> portValues;      // Babor
   final List<double> starboardValues; // Estribor
@@ -72,9 +72,9 @@ Widget build(BuildContext context) {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _buildLegendDot(color: Colors.red, label: "Port"),
+          _buildLegendDot(color: Colors.red, label: "Babor"),
           const SizedBox(width: 16),
-          _buildLegendDot(color: Colors.green, label: "Starboard"),
+          _buildLegendDot(color: Colors.green, label: "Estribor"),
         ],
       ),
     ],

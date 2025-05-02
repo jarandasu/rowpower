@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-/// Line chart used on the trainer screen.
-/// Displays average power from:
-/// - Entire team (black)
-/// - Port side (red)
-/// - Starboard side (green)
+/// Gráfico de líneas utilizado en la pantalla del entrenador.
+/// Muestra la potencia media de:
+/// - Todo el equipo (negro)
+/// - Babor (rojo)
+/// - Estribor (verde)
 class TrainerPowerChart extends StatelessWidget {
   final List<double> teamPower;
   final List<double> portPower;
@@ -89,11 +89,11 @@ Widget build(BuildContext context) {
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          _buildLegendDot(color: Colors.black, label: "Team Power"),
+          _buildLegendDot(color: Colors.black, label: "Potencia media equipo"),
           const SizedBox(width: 16),
-          _buildLegendDot(color: Colors.red, label: "Port Side"),
+          _buildLegendDot(color: Colors.red, label: "Babor"),
           const SizedBox(width: 16),
-          _buildLegendDot(color: Colors.green, label: "Starboard Side"),
+          _buildLegendDot(color: Colors.green, label: "Estribor"),
         ],
       ),
     ],
