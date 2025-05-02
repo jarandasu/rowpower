@@ -26,7 +26,7 @@ class RowerPowerChart extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.25,
           child: LineChart(
             LineChartData(
-              minY: 0,
+              minY: _getMinY(),
               maxY: _getMaxY(), // Altura del eje Y calculada dinámicamente
               titlesData: FlTitlesData(
                 bottomTitles: AxisTitles(
@@ -117,10 +117,18 @@ class RowerPowerChart extends StatelessWidget {
     );
   }
 
-// Calcula el valor máximo entre las dos series para escalar el gráfico
+// Calcula el valor máximo y mínimo para escalar el gráfico
   double _getMaxY() {
     final allValues = [...potencias, ...potenciasEquipo];
     if (allValues.isEmpty) return 100;
     return allValues.reduce((a, b) => a > b ? a : b) + 20;
   }
+
+  double _getMinY() {
+  final allValues = [...potencias, ...potenciasEquipo];
+  if (allValues.isEmpty) return 0;
+  final min = allValues.reduce((a, b) => a < b ? a : b);
+  return (min - 20).clamp(0, double.infinity);
+}
+
 }
