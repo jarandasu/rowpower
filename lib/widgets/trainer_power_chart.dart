@@ -26,7 +26,7 @@ Widget build(BuildContext context) {
       Expanded(
         child: LineChart(
           LineChartData(
-            minY: 0,
+            minY: _getMinY(),
             maxY: _getMaxY(),
             titlesData: FlTitlesData(
               bottomTitles: AxisTitles(
@@ -125,4 +125,15 @@ Widget build(BuildContext context) {
     if (all.isEmpty) return 100;
     return all.reduce((a, b) => a > b ? a : b) + 20;
   }
+
+double _getMinY() {
+  final all = [...teamPower, ...portPower, ...starboardPower];
+  if (all.isEmpty) return 0;
+  final min = all.reduce((a, b) => a < b ? a : b);
+  return min > 20 ? min - 20 : 0;
+}
+
+
+
+  
 }
