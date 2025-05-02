@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'ble_uuids.dart';
 
 typedef TrainerDataCallback = void Function(Map<String, dynamic> data);
 
@@ -16,9 +17,9 @@ class BLETrainerService {
     List<BluetoothService> services = await device.discoverServices();
 
     for (var service in services) {
-      if (service.uuid.toString() == "6e400001-b5a3-f393-e0a9-e50e24dcca9e") {
+      if (service.uuid.toString() == BLEUUID.trainerService) {
         for (var characteristic in service.characteristics) {
-          if (characteristic.uuid.toString() == "6e400003-b5a3-f393-e0a9-e50e24dcca9e") {
+          if (characteristic.uuid.toString() == BLEUUID.trainerCharacteristic) {
             await characteristic.setNotifyValue(true);
 
             characteristic.onValueReceived.listen((value) {
