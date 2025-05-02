@@ -19,19 +19,14 @@ class BLEService {
     List<BluetoothService> services = await device.discoverServices();
 
     for (var service in services) {
-          print("🔍 Service UUID: ${service.uuid}");
       if (service.uuid.toString() == BLEUUID.remeroService) {
-              print("✅ Servicio del remero encontrado");
         for (var characteristic in service.characteristics) {
-                  print("  🧪 Característica UUID: ${characteristic.uuid}");
           if (characteristic.uuid.toString() == BLEUUID.remeroCharacteristic) {
-                      print("✅ Característica del remero encontrada");
             await characteristic.setNotifyValue(true);
 
 
             characteristic.onValueReceived.listen((value) {
               final jsonStr = utf8.decode(value);
-                          print("📡 JSON recibido: $jsonStr");
               final Map<String, dynamic> decoded = json.decode(jsonStr);
               onData(decoded);
             });
