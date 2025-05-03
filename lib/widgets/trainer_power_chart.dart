@@ -114,7 +114,7 @@ Widget build(BuildContext context) {
           ),
         ),
         const SizedBox(width: 6),
-        Text(label, style: const TextStyle(fontSize: 12)),
+        Text(label, style: const TextStyle(fontSize: 20)),
       ],
     );
   }

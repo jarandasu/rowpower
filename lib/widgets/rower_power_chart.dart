@@ -112,7 +112,7 @@ class RowerPowerChart extends StatelessWidget {
           ),
         ),
         SizedBox(width: 6),
-        Text(label, style: TextStyle(fontSize: 12)),
+        Text(label, style: TextStyle(fontSize: 20)),
       ],
     );
   }

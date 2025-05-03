@@ -76,7 +76,7 @@ class _BLERowerPageState extends State<BLERowerPage> {
               children: [
                 Container(
                   height: height / 3,
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(15),
                   /// Componente gráfico que muestra potencias individuales vs equipo
                   child: RowerPowerChart(
                     potencias: potencias,
@@ -84,7 +84,7 @@ class _BLERowerPageState extends State<BLERowerPage> {
                     deviceName: widget.device.platformName,
                   ),
                 ),
-                const SizedBox(height: 12),
+                //const SizedBox(height: 6),
                 Column(
                   children: [
                     /// Potencia actual del remero en pantalla grande
