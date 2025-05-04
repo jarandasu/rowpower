@@ -35,8 +35,8 @@ Widget build(BuildContext context) {
                   showTitles: true,
                   getTitlesWidget: (value, _) {
                     int index = value.toInt();
-                    return Text(index < 4 ? "P${index + 1}" : "S${index - 3}",
-                        style: const TextStyle(fontSize: 10));
+                    return Text(index < 4 ? "B${index + 1}" : "E${index - 3}",
+                        style: const TextStyle(fontSize: 20));
                   },
                 ),
               ),
